@@ -1,0 +1,83 @@
+[
+  {
+    "role": "user",
+    "content": [
+      {
+        "text": "hi"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "text": "Hi there! How are you doing? Is there something I can help you with today? \ud83d\ude0a"
+      }
+    ],
+    "metadata": {
+      "usage": {
+        "inputTokens": 8,
+        "outputTokens": 24,
+        "totalTokens": 32
+      },
+      "metrics": {
+        "latencyMs": 2177,
+        "timeToFirstByteMs": 14750
+      }
+    }
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "text": "good my name is abhay"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "text": "That's a great name! Nice to meet you, Abhay! \ud83d\ude0a How can I help you today? Is there anything you'd like to talk about or any questions you have?"
+      }
+    ],
+    "metadata": {
+      "usage": {
+        "inputTokens": 41,
+        "outputTokens": 44,
+        "totalTokens": 85
+      },
+      "metrics": {
+        "latencyMs": 1384,
+        "timeToFirstByteMs": 1072
+      }
+    }
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "text": "hi do you know my name"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "text": "Yes, I do! You told me earlier \u2014 your name is **Abhay**! \ud83d\ude0a Is there anything I can help you with today?"
+      }
+    ],
+    "metadata": {
+      "usage": {
+        "inputTokens": 94,
+        "outputTokens": 36,
+        "totalTokens": 130
+      },
+      "metrics": {
+        "latencyMs": 1421,
+        "timeToFirstByteMs": 6686
+      }
+    }
+  }
+]
