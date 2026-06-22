@@ -72,7 +72,8 @@ def get_weather(location: str) -> dict:
 
 
 agent = Agent(
-    tools=[add,get_weather]
+    tools=[add,get_weather],
+    callback_handler=None
 )
 
 
@@ -99,7 +100,7 @@ async def stream_chat(prompt: str):
                 tool = event["current_tool_use"]["name"]
                 if (currentTool!=tool):
                     currentTool = tool
-                    print(f"\n\n🔧 Using Tool: {tool}\n")
+                    print(f"\n\n🔧 Using Tool: {tool}\n`")
 
             # Final result
             elif "result" in event:
