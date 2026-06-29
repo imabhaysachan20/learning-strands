@@ -69,11 +69,15 @@ def get_weather(location: str) -> dict:
     }
 
 
-
+def custom_callback_handler(**kwargs):
+    if "data" in kwargs:
+        print(f"{kwargs['data']}",end="")
+    elif "current_tool_use" in kwargs and kwargs["current_tool_use"].get("name"):
+        print(f"\nUSING TOOL: {kwargs['current_tool_use']['name']}")
 
 agent = Agent(
     tools=[add,get_weather],
-    callback_handler=None
+    callback_handler=custom_callback_handler
 )
 
 
@@ -86,26 +90,7 @@ async def stream_chat(prompt: str):
 
     async for event in stream:
         try:
-
-            # Text token
-            if "data" in event:
-                chunk = event["data"]
-
-                full_response += chunk
-
-                print(chunk, end="", flush=True)
-
-            # Tool call
-            elif event.get("type") == "tool_use_stream":
-                tool = event["current_tool_use"]["name"]
-                if (currentTool!=tool):
-                    currentTool = tool
-                    print(f"\n\n🔧 Using Tool: {tool}\n`")
-
-            # Final result
-            elif "result" in event:
-
-                print("\n\n✅ Complete")
+            pass
         except Exception as e:
               print(f"\n\n❌ Stream Error: {e}",flush=True)
 
